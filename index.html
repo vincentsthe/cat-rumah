@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Cat Rumah</title>
+		<link rel="shortcut icon" type="image/ico" href='assets/img/favicon.ico'>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	</head>
+	<body>
+		<div class="main-container">
+			<header>
+				<div class="container">
+					<div class="col-md-12">
+						<div class="clearfix">
+							<div class="pull-left">
+								<img class="logo" src="assets/img/logo.png" alt="Logo Tokilearning"/>
+							</div>
+							<div class="title pull-left">
+								<h1>Olimpiade Sains Nasional</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="clearfix"></div>
+			<div class="content">
+				<div class="container">
+					<div class="inner-container clearfix">
+				        <div class="col-md-12 main-content clearfix">
+				            <div>
+
+				            	<div class="title">
+				            			<h1>Cat Rumah</h1>
+				            	</div>
+				            	<div class="row">
+				            		<div class="col-md-8">
+				            			<div class="row">
+					            			<div class="col-md-6">
+						            			<svg id="frame" style="width:1000px;height: 350px;">
+						            				<g transform="translate(80, 40)">
+						            					<rect x="0" y="0" width="10" height="300" style="fill:black;"></rect>
+						            					<rect x="200" y="0" width="10" height="300" style="fill:black;"></rect>
+						            					<rect x="0" y="300" width="210" height="10" style="fill:black;"></rect>
+						            					<rect id="cat" x="10" width="190" y="300" height="0" style="fill:white"></rect>
+						            				</g>
+						            			</svg>
+						            		</div>
+						            		<div class="col-md-6">
+						            			<div class="color">
+						            				<div style="background-color:#FF0000"></div><span id="red-indicator"> 0</span>
+						            			</div>
+						            			<div class="color">
+						            				<div style="background-color:#FFFF00"></div><span id="yellow-indicator"> 0</span>
+						            			</div>
+						            			<div class="color">
+						            				<div style="background-color:#0000FF"></div><span id="blue-indicator"> 0</span>
+						            			</div>
+						            		</div>
+					            		</div>
+					            		<br><br><br>
+					            		<div class="col-md-12">
+					            			<div class="title">
+					            				Pilih pada warna yang ingin ditambah
+					            			</div>
+					            			<br><br>
+					            			<div class="row">
+					            				<div class="col-md-10 col-md-offset-1">
+					            					<div class="col-md-4">
+					            						<div id="red" class="color-box" style="background-color:#FF0000"></div>
+					            					</div>
+					            					<div class="col-md-4">
+					            						<div id="yellow" class="color-box" style="background-color:#FFFF00"></div>
+					            					</div>
+					            					<div class="col-md-4">
+					            						<div id="blue" class="color-box" style="background-color:#0000FF"></div>
+					            					</div>
+					            				</div>
+					            			</div>
+					            			<br><br>
+					            			<div class="row">
+					            				<div class="col-md-4 col-md-offset-4">
+					            					<input id="volume" type="text" placeholder="Jumlah..." class="form-control">
+					            				</div>
+					            			</div>
+					            		</div>
+				            		</div>
+				            		<div class="col-md-4">
+				            			<div>
+				            				<div class="title"><h2>Interaksi</h2></div>
+				            				<textarea id="textarea" class="terminal col-md-12" rows="4" readonly="true"></textarea>
+				            			</div>
+				            			<div class="row-span">
+				            				<div class="col-md-12 title">
+				            					<h2>Indikator Subsoal</h2>
+				            				</div>
+				            				<div class="span-6">
+				            					<div id="tc-1" class="btn btn-danger subtask col-md-12">
+				            						<h1>S1</h1>
+				            					</div>
+				            				</div>
+				            				<div class="span-6">
+				            					<div id="tc-2" class="btn btn-danger subtask col-md-12">
+				            						<h1>S2</h1>
+				            					</div>
+				            				</div>
+				            			</div>
+				            			<div class="clearfix"></div>
+				            			<div class="row-span">
+				            				<div class="col-md-12 title"><h2>Menu</h2></div>
+				            				<div class="span-5">
+				            					<select class="form-control" id="testcase">
+				            						<option value="1">Subtask 1</option>
+				            						<option value="2">Subtask 2</option>
+				            					</select>
+				            				</div>
+				            				<div class="span-4">
+				            					<button class="btn btn-primary btn-block" id="play">Mainkan</button>
+				            				</div>
+				            				<div class="span-3">
+				            					<button class="btn btn-primary btn-block" id="reset">Ulang</button>
+				            				</div>
+				            			</div>
+				            			<div class="clearfix"></div>
+				            				<br>
+				            			<div class="row-span">
+				            				<div class="span-12">
+				            					<button class="btn btn-success btn-block"><h2>Download Source Code</h2></button>
+				            				</div>
+				            			</div>
+				            			<div class="clearfix"></div>
+				            			<br>
+				            			<div class="row-span">
+				            				<div class="span-6">
+				            					<button class="btn btn-info btn-block">Bantuan</button>
+				            				</div>
+				            				<div class="span-6">
+				            					<button class="btn btn-info btn-block">About</button>
+				            				</div>
+				            			</div>
+				            		</div>
+
+				            	</div>
+
+
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="pull-left first">
+					<div class="col-md-12">
+						<div class="copyright">
+							&#169; 2014 Tim Olimpiade Komputer Indonesia
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" data-main="assets/js/custom/config.js" src="assets/js/vendor/require.js"></script>
+	</body>
+</html>
