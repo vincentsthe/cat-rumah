@@ -58,20 +58,24 @@ define(['jquery', 'testcase', 'notifier', 'textarea', 'cat', 'drawer'],
 				var input = $("#volume").val();
 				if(!isNaN(parseFloat(input))) {
 					if(active != -1) {
-						cat.fill(active, parseFloat(input));
-						drawer.update();
+						if(cat.getTotal() + parseFloat(input) <= 1000) {
+							cat.fill(active, parseFloat(input));
+							drawer.update();
 
-						var warna;
-						if(warna == 0) {
-							warna = "MERAH";
-						} else if(warna == 1) {
-							warna = "KUNING";
+							var warna;
+							if(warna == 0) {
+								warna = "MERAH";
+							} else if(warna == 1) {
+								warna = "KUNING";
+							} else {
+								warna = "BIRU";
+							}
+
+							textarea.insertLeft("TAMBAH " + warna + " " + parseFloat(input));
+							textarea.insertRight("" + cat.getScore().toFixed(4));
 						} else {
-							warna = "BIRU";
+							notifier.createAlert("Jumlah cat melebihi 1000");
 						}
-
-						textarea.insertLeft("TAMBAH " + warna + " " + parseFloat(input));
-						textarea.insertRight("" + cat.getScore().toFixed(4));
 					} else {
 						notifier.createAlert("Pilih Warna");
 					}
