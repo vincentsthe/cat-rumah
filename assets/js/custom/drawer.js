@@ -1,4 +1,4 @@
-define(['cat', 'd3'], function(cat, d3) {
+define(['cat', 'd3', 'ryb'], function(cat, d3, ryb) {
 	var getBarHeight = function() {
 		var composition = cat.getCurrentComposition();
 		var total = composition[0] + composition[1] + composition[2];
@@ -17,24 +17,28 @@ define(['cat', 'd3'], function(cat, d3) {
 		var composition = cat.getCurrentComposition();
 		var total = composition[0] + composition[1] + composition[2];
 
-		var red = 1;
-		var green = 1;
-		var blue = 1;
+		var red = composition[0] / total;
+		var yellow = composition[1] / total;
+		var blue = composition[2] / total;
 
-		green -= composition[0]/total;
-		blue -= composition[0]/total;
+		red = Math.floor(red*255);
+		yellow = Math.floor(yellow*255);
+		blue = parseInt(Math.floor(blue*255));
 
-		blue -= composition[1]/total;
+		redCode = red.toString(16);
+		if(redCode.length == 1) {
+			redCode = "0" + redCode;
+		}
+		yellowCode = yellow.toString(16);
+		if(yellowCode.length == 1) {
+			yellowCode = "0" + yellowCode;
+		}
+		blueCode = blue.toString(16);
+		if(blueCode.length == 1) {
+			blueCode = "0" + blueCode;
+		}
 
-		red -= composition[2]/total;
-		green -= composition[2]/total;
-
-		red = Math.floor(Math.max(0, red)*255);
-		green = Math.floor(Math.max(0, green)*255);
-		blue = Math.floor(Math.max(0, blue)*255);
-
-		var str = "rgb(" + red + ", " + green + ", " + blue + ")";
-
+		return "#" + ryb.mix('#' + redCode + yellowCode + blueCode, {result: "rgb"});
 		return str;
 	};
 
