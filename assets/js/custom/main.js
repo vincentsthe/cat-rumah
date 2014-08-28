@@ -1,5 +1,5 @@
-define(['jquery', 'testcase', 'notifier', 'textarea', 'cat', 'drawer'], 
-	function($, testcase, notifier, textarea, cat, drawer) {
+define(['jquery', 'testcase', 'notifier', 'textarea', 'cat', 'drawer', 'message'], 
+	function($, testcase, notifier, textarea, cat, drawer, message) {
 	
 	$(document).ready(function() {
 		var done;
@@ -39,6 +39,14 @@ define(['jquery', 'testcase', 'notifier', 'textarea', 'cat', 'drawer'],
 
 		$("#play").click(function() {
 			init($("#testcase").val());
+		});
+
+		$("#help").click(function() {
+			notifier.createText(message.help());
+		});
+
+		$("#about").click(function() {
+			notifier.createText(message.about());
 		});
 
 		$("#red").click(function() {
