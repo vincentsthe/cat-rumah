@@ -71,9 +71,9 @@ define(['jquery', 'testcase', 'notifier', 'textarea', 'cat', 'drawer', 'message'
 							drawer.update();
 
 							var warna;
-							if(warna == 0) {
+							if(active == 0) {
 								warna = "MERAH";
-							} else if(warna == 1) {
+							} else if(active == 1) {
 								warna = "KUNING";
 							} else {
 								warna = "BIRU";
